@@ -44,7 +44,12 @@
               <p class="pet-description"><%= pet.description %></p>
               <div class="action-buttons">
                 <a href="/admin/edit-pet/<%= pet._id %>" class="action-btn"
-                  >Edit</a
+                  >Taisyti</a
+                >
+                <a
+                  href="/admin/view-pet-contacts/<%= pet._id%>"
+                  class="action-btn"
+                  >Kontaktai</a
                 >
                 <form
                   class="delete-form"
@@ -53,7 +58,7 @@
                   method="POST"
                 >
                   <input type="hidden" name="_id" value="<%= pet._id %>" />
-                  <button class="action-btn">Delete</button>
+                  <button class="action-btn">Trinti</button>
                 </form>
               </div>
             </div>

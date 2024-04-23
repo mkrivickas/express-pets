@@ -46,6 +46,7 @@ function openOverlay(el) {
   document
     .querySelector(".form-overlay")
     .classList.add("form-overlay--is-visible");
+  document.querySelector(":root").style.overflowY = "hidden";
 }
 
 document
@@ -56,6 +57,7 @@ function closeOverlay() {
   document
     .querySelector(".form-overlay")
     .classList.remove("form-overlay--is-visible");
+  document.querySelector(":root").style.overflowY = "";
 }
 
 document
@@ -80,4 +82,16 @@ document
       },
       body: JSON.stringify(userValues),
     });
+
+    document.querySelector(".thank-you").classList.add("thank-you--visible");
+    setTimeout(closeOverlay, 2500);
+    setTimeout(() => {
+      document
+        .querySelector(".thank-you")
+        .classList.remove("thank-you--visible");
+      document.querySelector("#name").value = "";
+      document.querySelector("#email").value = "";
+      document.querySelector("#secret").value = "";
+      document.querySelector("#comment").value = "";
+    }, 2900);
   });
